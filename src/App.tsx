@@ -1,24 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Void Points
-        </a>
-      </header>
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <h1 className="mt-3">Void</h1>
+        </div>
+        <div className="col text-end">
+          <a href="#!"><span className="badge bg-success">Login</span></a>
+        </div>
+        <hr className="mb-3"></hr>
+      </div>
+
+      <div className="row">
+        <div className="col-md-2">
+          <nav>
+            <div className="list-group">
+              <a href="#!" className="list-group-item list-group-item-action">Home</a>
+              <a href="#!" className="list-group-item list-group-item-action">Redeem</a>
+              <a href="#!" className="list-group-item list-group-item-action">Give</a>
+              <a href="#!" className="list-group-item list-group-item-action">GraphQL</a>
+            </div>
+          </nav>
+        </div>
+        <div className="col-md-10">
+          <Home />
+        </div>
+      </div>
     </div>
   );
 }
