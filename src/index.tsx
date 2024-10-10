@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      {index: true, element: <Home />},
+      { index: true, element: <Home /> },
       {
         path: "/give",
         element: <Give />
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
     ]
   },
   {
-    
+
   }
 ])
 
