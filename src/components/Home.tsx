@@ -7,31 +7,23 @@ function Home() {
   const [recognitions, setRecognitions] = useState<Recognition[]>([]);
 
   useEffect(() => {
-    let recognitionList = [
-      {
-        id: 1,
-        amount: 25,
-        recipient: 'Doug',
-        issuer: 'Sean',
-        message: 'You did a great job.'
-      },
-      {
-        id: 2,
-        amount: 50,
-        recipient: 'Megan',
-        issuer: 'Sean',
-        message: 'You did a great job.'
-      },
-      {
-        id: 3,
-        amount: 5,
-        recipient: 'Sawyer',
-        issuer: 'Sean',
-        message: 'Get it together.'
-      }
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
 
-    ];
-    setRecognitions(recognitionList);
+    const requestOptions = {
+      method: 'GET',
+      headers: headers,
+    }
+
+    fetch(`/recognitions`, requestOptions)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log('got that data', data);
+        setRecognitions(data);
+      })
+      .catch(err => {
+        console.log(err);
+      })
   }, []);
 
   return (

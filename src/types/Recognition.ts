@@ -4,4 +4,5 @@ export interface Recognition {
   recipient: string;
   issuer: string;
   message: string;
+  dateIssued: string;
 }
